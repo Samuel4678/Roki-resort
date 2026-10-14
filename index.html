@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROKI Resort · Kaewa, Masinga · Lakeside Escape</title>
+<meta name="description" content="ROKI Resort in Kaewa, Masinga. Rooms, dining, events and weekend getaways. Book or ask our concierge.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="top"><span id="tPhone"></span><span id="tMail"></span></div>
+<header id="nav">
+  <a class="logo" href="#home"><b>ROKI</b><small>RESORT · KAEWA</small></a>
+  <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('menu')">☰</button>
+  <nav onclick="document.body.classList.remove('menu')">
+    <a href="#about">About</a><a href="#rooms">Rooms</a><a href="#dining">Dining</a><a href="#events">Events</a><a href="#leisure">Leisure</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    <a class="btn sm" href="#book">Book Now</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <img data-ph="Hero · lakeside view" data-i="0" src="images/hero.jpg" alt="ROKI Resort">
+  <div class="shade"></div>
+  <div class="hero-t"><p class="eyebrow">Kaewa · Masinga · Kenya</p><h1>Where the lake<br>slows time</h1><p>A restful getaway for couples, families and corporate teams.</p><a class="btn" href="#book">Check Availability</a></div>
+</section>
+
+<form class="bookbar" id="book" onsubmit="return bookNow(event)">
+  <label>Check-in<input type="date" id="bIn" required></label>
+  <label>Check-out<input type="date" id="bOut" required></label>
+  <label>Guests<select id="bG"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></label>
+  <label>Room<select id="bR"></select></label>
+  <button class="btn">Book via WhatsApp</button>
+</form>
+
+<section id="about" class="wrap split">
+  <div class="rv"><p class="eyebrow dk">Welcome</p><h2>A calm retreat at Masinga</h2>
+    <p id="aboutTxt"></p>
+    <ul class="stats" id="stats"></ul></div>
+  <div class="imgs rv"><img data-ph="About 1" data-i="1" src="images/about1.jpg" alt=""><img data-ph="About 2" data-i="2" src="images/about2.jpg" alt=""></div>
+</section>
+
+<section id="rooms" class="band"><div class="wrap"><p class="eyebrow dk c">Stay</p><h2 class="c">Rooms &amp; Suites</h2><div class="grid" id="roomGrid"></div></div></section>
+
+<section id="dining" class="wrap split rev">
+  <div class="imgs rv"><img data-ph="Restaurant" data-i="3" src="images/dining.jpg" alt=""></div>
+  <div class="rv"><p class="eyebrow dk">Taste</p><h2>Dining &amp; Bar</h2><div id="dineList"></div></div>
+</section>
+
+<section id="events" class="dark"><div class="wrap"><p class="eyebrow c">Gather</p><h2 class="c">Conferences, Weddings &amp; Events</h2><div class="grid" id="evGrid"></div></div></section>
+
+<section id="leisure" class="wrap"><p class="eyebrow dk c">Unwind</p><h2 class="c">Leisure &amp; Nearby</h2><div class="chips" id="leisure"></div></section>
+
+<section id="gallery" class="band"><div class="wrap"><h2 class="c">Gallery</h2><div class="gal" id="gal"></div></div></section>
+
+<section id="contact" class="wrap split">
+  <div class="rv"><p class="eyebrow dk">Reach us</p><h2>Plan your stay</h2><div id="cInfo"></div>
+    <div class="map" id="map">Map placeholder<br><small>Paste your Google Maps embed in config</small></div></div>
+  <form class="card rv" onsubmit="return sendEnq(event)">
+    <h3>Send an enquiry</h3>
+    <input id="eN" placeholder="Your name" required><input id="eP" placeholder="Phone / WhatsApp" required>
+    <textarea id="eM" rows="4" placeholder="How can we help?" required></textarea><button class="btn">Send via WhatsApp</button>
+  </form>
+</section>
+
+<footer><b>ROKI Resort</b> · Kaewa, Masinga · <a id="fb" target="_blank" rel="noopener">Facebook</a><br><small>© <span id="yr"></span> ROKI Resort. All rights reserved.</small></footer>
+
+<div id="agent">
+  <button id="agentBtn" onclick="Agent.toggle()" aria-label="Open concierge">💬<span>Ask Roki</span></button>
+  <div id="agentBox" hidden>
+    <div class="ah"><div><b>Roki Concierge</b><small>Instant answers · 24/7</small></div><button onclick="Agent.toggle()" aria-label="Close">×</button></div>
+    <div id="msgs"></div><div id="chips"></div>
+    <form onsubmit="return Agent.send(event)"><input id="ain" placeholder="Ask about rooms, rates, events…" autocomplete="off"><button>➤</button></form>
+  </div>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
