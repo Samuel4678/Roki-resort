@@ -49,6 +49,10 @@ input,select,textarea{font:inherit;padding:.65rem .8rem;border:1px solid #ddd3c0
 .split{grid-template-columns:1fr;gap:2rem}.split.rev .imgs{order:0}.bookbar{grid-template-columns:1fr 1fr}.bookbar .btn{grid-column:1/-1}.gal{grid-template-columns:repeat(2,1fr)}.top{justify-content:center}.imgs{height:300px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
+/* About photos: two wide shots, stacked so nothing important is cropped */
+.imgs.stack{grid-template-columns:1fr;grid-template-rows:1fr 1fr;height:460px}.imgs.stack .ph:nth-child(2){margin-top:0}
+@media(max-width:860px){.imgs.stack{height:380px}}
+
 /* ===== Photos (replace files in /images, keep the names) ===== */
 .ph{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:var(--teal2)}
 .ph.hero{background-image:url(images/hero.webp)}
