@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("roki-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+<meta name="theme-color" content="#0b1616">
 <title>ROKI Resort · Kaewa, Masinga</title>
 <meta name="description" content="ROKI Resort in Kaewa, Masinga: accommodation, dining, events and a beautiful fountain courtyard.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="photos.css">
 </head>
 <body>
 <div class="top"><span>📍 Kaewa, Masinga</span><a id="tDir" target="_blank" rel="noopener">Get directions</a><span id="tPhone"></span></div>
@@ -19,6 +20,7 @@
     <a href="#about">About</a><a href="#rooms">Stay</a><a href="#dining">Dining</a><a href="#events">Events</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
     <a class="btn sm" href="#book">Book Now</a>
   </nav>
+  <button class="tog" id="theme" type="button" aria-label="Switch to light mode" title="Switch theme"></button>
 </header>
 
 <section class="hero" id="home">

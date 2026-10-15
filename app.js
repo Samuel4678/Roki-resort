@@ -67,3 +67,8 @@ const Agent=(()=>{let opened=false,flow=null,data={};const box=$("#agentBox"),ms
  return{toggle(){box.hidden=!box.hidden;if(!box.hidden&&!opened){opened=true;say(`Karibu to <b>${C.name}</b> 🌿 I'm Roki. Ask me anything or choose below.`);chips(MENU)}if(!box.hidden)$("#ain").focus()},
   send(e){e.preventDefault();const v=$("#ain").value.trim();if(v){$("#ain").value="";say(v.replace(/</g,"&lt;"),"u");handle(v)}return false},
   ask(q){if(box.hidden)this.toggle();say(q.replace(/</g,"&lt;"),"u");handle(q)}}})();
+
+/* Light / dark switch (dark is the default; choice is remembered) */
+(function(){const r=document.documentElement,b=$("#theme"),m=document.querySelector('meta[name="theme-color"]');
+ const paint=()=>{const d=r.dataset.theme!=="light";b.textContent=d?"☀️":"🌙";b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode");if(m)m.content=d?"#0b1616":"#faf6ef"};
+ b.onclick=()=>{r.dataset.theme=r.dataset.theme==="light"?"dark":"light";try{localStorage.setItem("roki-theme",r.dataset.theme)}catch(e){}paint()};paint()})();
