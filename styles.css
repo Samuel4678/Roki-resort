@@ -53,10 +53,7 @@ input,select,textarea{font:inherit;padding:.65rem .8rem;border:1px solid #ddd3c0
 .imgs.stack{grid-template-columns:1fr;grid-template-rows:1fr 1fr;height:460px}.imgs.stack .ph:nth-child(2){margin-top:0}
 @media(max-width:860px){.imgs.stack{height:380px}}
 
-/* ===== Photos (replace files in /images, keep the names) ===== */
-.ph{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:var(--teal2)}
-.ph.hero{background-image:url(images/hero.webp)}
-.ph.building{background-image:url(images/building.webp)}
-.ph.fountain{background-image:url(images/fountain.webp)}
-.ph.cottages{background-image:url(images/cottages.webp)}
-.ph.courtyard{background-image:url(images/courtyard.webp)}
+
+/* Room cards use real photos */
+.room .pic{height:190px;font-size:0;background-size:cover;background-position:center}.room .pic:after{display:none}
+.room:hover .pic{filter:saturate(1.1)}

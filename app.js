@@ -7,8 +7,8 @@ $("#tDir").href=MAP;$("#fb").href=C.facebook;$("#aboutTxt").textContent=C.about;
 if(C.phone)$("#tPhone").innerHTML=`<a href="tel:${C.phone.replace(/\s/g,"")}">📞 ${C.phone}</a>`;
 $("#feat").innerHTML=C.features.map(f=>`<li>${f}</li>`).join("");
 $("#bR").innerHTML=`<option>Any room</option>`+C.rooms.map(r=>`<option>${r.name}</option>`).join("");
-const icons=["🛏️","🌿","👨‍👩‍👧‍👦"];
-$("#roomGrid").innerHTML=C.rooms.map((r,i)=>`<article class="room rv"><div class="pic"><span>${icons[i%3]}</span></div><div class="b"><h3>${r.name}</h3><p>${r.desc}</p><div class="tags"><i>Sleeps ${r.sleeps}</i></div><div class="row"><span class="price">Rates on request</span><button class="link" onclick="Agent.ask('Book ${r.name}')">Enquire →</button></div></div></article>`).join("");
+const pics=["building","cottages","fountain"]; /* photo shown on each room card; swap names or add your own room photos */
+$("#roomGrid").innerHTML=C.rooms.map((r,i)=>`<article class="room rv"><div class="pic ph ${pics[i%3]}" role="img" aria-label="${r.name}"></div><div class="b"><h3>${r.name}</h3><p>${r.desc}</p><div class="tags"><i>Sleeps ${r.sleeps}</i></div><div class="row"><span class="price">Rates on request</span><button class="link" onclick="Agent.ask('Book ${r.name}')">Enquire →</button></div></div></article>`).join("");
 $("#dineList").innerHTML=C.dining.map(d=>`<div class="dine"><h3>${d.name}</h3><p>${d.desc}</p></div>`).join("");
 $("#evGrid").innerHTML=C.events.map((e,i)=>`<div class="ev rv"><span>${["💍","🏛️","🌿"][i%3]}</span><h3>${e.name}</h3><p>${e.desc}</p></div>`).join("");
 $("#leisure").innerHTML=C.leisure.map(l=>`<span>${l}</span>`).join("");
